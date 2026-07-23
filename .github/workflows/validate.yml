@@ -1,0 +1,43 @@
+name: Validate OCSA
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+
+      - name: Run database integrity check
+        run: |
+          python - <<'PY'
+          import sqlite3
+          con = sqlite3.connect("atlas.db")
+          result = con.execute("PRAGMA integrity_check").fetchone()[0]
+          if result != "ok":
+              raise SystemExit(f"SQLite integrity failure: {result}")
+          print("SQLite integrity check: ok")
+          PY
+
+      - name: Run atlas validator
+        run: python src/ocsa_store.py validate
+
+      - name: Run automated tests
+        run: python -m unittest discover -s tests -v
