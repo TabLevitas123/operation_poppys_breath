@@ -1,0 +1,107 @@
+name: Materialize hardened OCSA release
+
+on:
+  push:
+    branches:
+      - agent/ocsa-infrastructure-hardening-20260723
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Check out staged source bundle
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct and authenticate source bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          (
+            cd .bootstrap/hardened-source
+            sha256sum --check SHA256SUMS
+          )
+          cat .bootstrap/hardened-source/part-*.b64 > /tmp/ocsa-source.tar.gz.b64
+          echo 'ad8b321dc2c7cfabbc9d9c6710061f10289603686fdbec2785809e39e82e0473  /tmp/ocsa-source.tar.gz.b64' | sha256sum --check -
+          base64 --decode /tmp/ocsa-source.tar.gz.b64 > /tmp/ocsa-source.tar.gz
+          echo '8bcc3a3b3c3e52dda85a77b1bb8aa0a088ba7ce75c0bf44f278f46df9d9e2192  /tmp/ocsa-source.tar.gz' | sha256sum --check -
+          python - <<'PY'
+          import pathlib
+          import tarfile
+
+          archive = pathlib.Path('/tmp/ocsa-source.tar.gz')
+          with tarfile.open(archive, 'r:gz') as handle:
+              for member in handle.getmembers():
+                  path = pathlib.PurePosixPath(member.name)
+                  if path.is_absolute() or '..' in path.parts:
+                      raise SystemExit(f'unsafe archive path: {member.name}')
+                  if member.issym() or member.islnk():
+                      raise SystemExit(f'archive link rejected: {member.name}')
+          PY
+          tar -xzf /tmp/ocsa-source.tar.gz -C .
+          test -f schema.sql
+          test -f src/ocsa_store.py
+          test -f tests/test_store.py
+          test -f scripts/build_infrastructure_release.py
+          sed -i 's/--output-dir/--output/g' README.md
+          rm -rf .bootstrap/hardened-source
+          rm -f .github/workflows/bootstrap-audit.yml
+          rm -f .github/workflows/materialize-hardened-release.yml
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install declared dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+
+      - name: Build hardened checkpoint
+        run: python scripts/build_infrastructure_release.py --print-result > /tmp/ocsa-build-result.json
+
+      - name: Validate generated database, exports, and release
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m compileall -q src scripts tests
+          python src/ocsa_store.py --db atlas.db --schema schema.sql --storage-root . validate --report /tmp/ocsa-validation.json
+          python -m unittest discover -s tests -v
+          rm -rf /tmp/ocsa-export-a /tmp/ocsa-export-b
+          python src/ocsa_store.py --db atlas.db --schema schema.sql --storage-root . export --output /tmp/ocsa-export-a
+          python src/ocsa_store.py --db atlas.db --schema schema.sql --storage-root . export --output /tmp/ocsa-export-b
+          diff -ru /tmp/ocsa-export-a /tmp/ocsa-export-b
+          diff -ru exports /tmp/ocsa-export-a
+          python scripts/verify_release.py releases/v0.2.0/OCSA_v0.2.0-infra.1.zip > /tmp/ocsa-release-verification.json
+          sha256sum --check manifests/SHA256SUMS
+          git diff --check
+
+      - name: Commit materialized hardened release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Harden OCSA scientific trust infrastructure'
+          git push origin HEAD:agent/ocsa-infrastructure-hardening-20260723
+          git rev-parse HEAD > /tmp/ocsa-materialized-commit.txt
+
+      - name: Upload materialization evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocsa-materialization-evidence
+          path: |
+            /tmp/ocsa-build-result.json
+            /tmp/ocsa-validation.json
+            /tmp/ocsa-release-verification.json
+            /tmp/ocsa-materialized-commit.txt
+          if-no-files-found: warn
+          retention-days: 14
