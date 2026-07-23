@@ -1,0 +1,97 @@
+name: Audit OCSA bootstrap restoration
+
+on:
+  push:
+    branches:
+      - agent/ocsa-infrastructure-hardening-20260723
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  bootstrap-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Restore and inspect published bundle
+        shell: bash
+        run: |
+          set -uo pipefail
+          report="$GITHUB_WORKSPACE/bootstrap-audit-report.txt"
+          : > "$report"
+          failure=0
+
+          echo "## bootstrap directory" | tee -a "$report"
+          find .bootstrap -maxdepth 1 -type f -printf '%f %s bytes\n' | sort | tee -a "$report"
+
+          if [[ -f .bootstrap/SHA256SUMS ]]; then
+            echo "## declared hashes" | tee -a "$report"
+            cat .bootstrap/SHA256SUMS | tee -a "$report"
+            if ! (cd .bootstrap && sha256sum --check SHA256SUMS) | tee -a "$report"; then
+              echo "ERROR: declared bootstrap hashes do not verify" | tee -a "$report"
+              failure=1
+            fi
+          else
+            echo "ERROR: .bootstrap/SHA256SUMS is missing" | tee -a "$report"
+            failure=1
+          fi
+
+          cat .bootstrap/part-*.b64 > operation_poppys_breath.bundle.b64
+          if ! base64 --decode operation_poppys_breath.bundle.b64 > operation_poppys_breath.bundle; then
+            echo "ERROR: base64 decode failed" | tee -a "$report"
+            exit 1
+          fi
+          echo "## actual bundle hash" | tee -a "$report"
+          sha256sum operation_poppys_breath.bundle | tee -a "$report"
+
+          if ! git bundle verify operation_poppys_breath.bundle 2>&1 | tee -a "$report"; then
+            echo "ERROR: git bundle verification failed" | tee -a "$report"
+            exit 1
+          fi
+
+          rm -rf restored
+          if ! git clone operation_poppys_breath.bundle restored 2>&1 | tee -a "$report"; then
+            echo "ERROR: git bundle clone failed" | tee -a "$report"
+            exit 1
+          fi
+          (
+            cd restored
+            git checkout main
+            echo "## restored HEAD" | tee -a "$report"
+            git rev-parse HEAD | tee -a "$report"
+            echo "## restored file tree" | tee -a "$report"
+            find . -path ./.git -prune -o -type f -print | sort | tee -a "$report"
+            echo "## restored tests" | tee -a "$report"
+            if [[ -f requirements.txt ]]; then
+              python -m pip install --disable-pip-version-check -r requirements.txt
+            fi
+            if [[ -f src/ocsa_store.py ]]; then
+              python src/ocsa_store.py init
+              python src/ocsa_store.py validate
+            fi
+            if [[ -d tests ]]; then
+              python -m unittest discover -s tests -v
+            fi
+          ) 2>&1 | tee -a "$report"
+
+          if [[ "$failure" -ne 0 ]]; then
+            echo "ERROR: published restoration is not independently hash-verifiable" | tee -a "$report"
+            exit 1
+          fi
+
+      - name: Upload audit materials
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bootstrap-audit
+          path: |
+            bootstrap-audit-report.txt
+            operation_poppys_breath.bundle
+          if-no-files-found: warn
+          retention-days: 7
