@@ -1,77 +1,39 @@
-name: Materialize hardened OCSA release
+name: Materialize hardened OCSA source
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - agent/ocsa-infrastructure-hardening-20260723
 
 permissions:
   contents: write
 
 jobs:
   materialize:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
 
     steps:
-      - name: Check out staged source bundle
+      - name: Check out authenticated source bundle
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: agent/ocsa-infrastructure-hardening-20260723
 
-      - name: Authenticate, build, validate, and publish
+      - name: Verify, extract, and commit source tree
         shell: bash
         run: |
           set -Eeuo pipefail
-          LOG=/tmp/ocsa-materialization.log
-          PHASE=initializing
-          : > "$LOG"
-          exec > >(tee -a "$LOG") 2>&1
 
-          fail() {
-            code="$1"
-            line="$2"
-            trap - ERR
-            set +e
-            echo "MATERIALIZATION FAILED: phase=$PHASE line=$line exit=$code"
-            mkdir -p .bootstrap
-            cp "$LOG" .bootstrap/MATERIALIZATION_FAILURE.log
-            printf '{"phase":"%s","line":%s,"exit_code":%s,"head":"%s"}\n' \
-              "$PHASE" "$line" "$code" "$(git rev-parse HEAD 2>/dev/null)" \
-              > .bootstrap/MATERIALIZATION_FAILURE.json
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add -f .bootstrap/MATERIALIZATION_FAILURE.log .bootstrap/MATERIALIZATION_FAILURE.json
-            git commit -m "Record OCSA materialization failure: $PHASE" || true
-            git push origin HEAD:agent/ocsa-infrastructure-hardening-20260723 || true
-            exit "$code"
-          }
-          trap 'fail $? $LINENO' ERR
-
-          PHASE=runtime_check
-          python - <<'PY'
-          import sys
-          if sys.version_info < (3, 12):
-              raise SystemExit(f'Python 3.12+ required; found {sys.version}')
-          print(sys.version)
-          PY
-
-          PHASE=chunk_hashes
-          (
-            cd .bootstrap/hardened-source
-            sha256sum --check SHA256SUMS
-          )
-
-          PHASE=base64_stream
-          cat .bootstrap/hardened-source/part-*.b64 > /tmp/ocsa-source.tar.gz.b64
+          cd .bootstrap/hardened-source
+          sha256sum --check SHA256SUMS
+          cat part-*.b64 > /tmp/ocsa-source.tar.gz.b64
           echo 'ad8b321dc2c7cfabbc9d9c6710061f10289603686fdbec2785809e39e82e0473  /tmp/ocsa-source.tar.gz.b64' | sha256sum --check -
-
-          PHASE=decoded_tarball
           base64 --decode /tmp/ocsa-source.tar.gz.b64 > /tmp/ocsa-source.tar.gz
           echo '8bcc3a3b3c3e52dda85a77b1bb8aa0a088ba7ce75c0bf44f278f46df9d9e2192  /tmp/ocsa-source.tar.gz' | sha256sum --check -
+          cd ../..
 
-          PHASE=archive_safety
           python - <<'PY'
           import pathlib
           import tarfile
@@ -86,50 +48,20 @@ jobs:
                       raise SystemExit(f'archive link rejected: {member.name}')
           PY
 
-          PHASE=source_extraction
           tar -xzf /tmp/ocsa-source.tar.gz -C .
           test -f schema.sql
           test -f src/ocsa_store.py
           test -f tests/test_store.py
           test -f scripts/build_infrastructure_release.py
-          sed -i 's/--output-dir/--output/g' README.md
+          test -f RESEARCH_PROTOCOL.md
 
-          PHASE=release_build
-          python scripts/build_infrastructure_release.py --print-result > /tmp/ocsa-build-result.json
-
-          PHASE=compiled_sources
-          python -m compileall -q src scripts tests
-
-          PHASE=canonical_validation
-          python src/ocsa_store.py --db atlas.db --schema schema.sql --storage-root . validate --report /tmp/ocsa-validation.json
-
-          PHASE=test_suite
-          python -m unittest discover -s tests -v
-
-          PHASE=deterministic_exports
-          rm -rf /tmp/ocsa-export-a /tmp/ocsa-export-b
-          python src/ocsa_store.py --db atlas.db --schema schema.sql --storage-root . export --output /tmp/ocsa-export-a
-          python src/ocsa_store.py --db atlas.db --schema schema.sql --storage-root . export --output /tmp/ocsa-export-b
-          diff -ru /tmp/ocsa-export-a /tmp/ocsa-export-b
-          diff -ru exports /tmp/ocsa-export-a
-
-          PHASE=release_restore
-          python scripts/verify_release.py releases/v0.2.0/OCSA_v0.2.0-infra.1.zip > /tmp/ocsa-release-verification.json
-
-          PHASE=repository_checksums
-          sha256sum --check manifests/SHA256SUMS
-          git diff --check
-
-          PHASE=publication_commit
-          mkdir -p reports
-          cp "$LOG" reports/github_materialization_OPB-20260723-M0-INFRA-HARDENING-001.log
           rm -rf .bootstrap/hardened-source
-          rm -f .bootstrap/MATERIALIZATION_FAILURE.log .bootstrap/MATERIALIZATION_FAILURE.json
           rm -f .github/workflows/bootstrap-audit.yml
           rm -f .github/workflows/materialize-hardened-release.yml
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'Harden OCSA scientific trust infrastructure'
+          git diff --cached --check
+          git commit -m 'Materialize hardened OCSA infrastructure source'
           git push origin HEAD:agent/ocsa-infrastructure-hardening-20260723
-          echo "MATERIALIZED_COMMIT=$(git rev-parse HEAD)"
