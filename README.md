@@ -1,32 +1,31 @@
 # Operation Poppy's Breath
 
-Research infrastructure for the Opioid Causal Systems Atlas (OCSA): a provenance-first, versioned knowledge graph and retrieval store for mapping opioid receptors, signaling, cells, circuits, physiology, clinical outcomes, contradictions, and open questions.
+Operation Poppy's Breath maintains the Opioid Causal Systems Atlas (OCSA), a provenance-first biomedical research database and causal atlas for opioid systems and their interactions with pain, reward, respiration, tolerance, dependence, withdrawal, overdose, and harm-reduction mechanisms.
 
-## Current repository payload
+This repository is the project's durable source of truth. `/mnt/data` and other session-local workspaces are temporary scratch space only.
 
-The complete committed project is preserved as a Git bundle encoded in Base64 under `.bootstrap/`. The bundle contains the SQLite atlas, schema, Python store, tests, exports, validation workflow, manifests, and versioned snapshots.
+## Persistence contract
 
-The canonical local commit represented by the bundle is:
+At the beginning of every research run, read the repository state before doing new work. At the end of every validated checkpoint, commit and push the actual working source, schemas, manifests, reports, exports, database snapshots, and versioned release artifacts needed to resume after a workspace reset.
 
-`0c3c1984e75b52bc2d8f55d637b72cf150434bc8`
+Do not rely solely on conversation memory, an unpushed `/mnt/data` directory, ephemeral workflow artifacts, or a hidden archive. Recovery archives may exist as secondary backups, but the ordinary source tree must remain directly inspectable and cloneable.
 
-## Restore the complete repository
+See [`PERSISTENCE.md`](PERSISTENCE.md) for the detailed contract.
 
-Clone this repository, then run:
+## Current visible source
 
-```bash
-cat .bootstrap/part-*.b64 > operation_poppys_breath.bundle.b64
-base64 --decode operation_poppys_breath.bundle.b64 > operation_poppys_breath.bundle
-git bundle verify operation_poppys_breath.bundle
-git clone operation_poppys_breath.bundle operation_poppys_breath-restored
-cd operation_poppys_breath-restored
-git checkout main
-```
+- `schema.sql` — SQLite schema.
+- `src/ocsa_store.py` — database initialization and validation entry point.
+- `tests/test_store.py` — automated validation tests.
+- `config.json` — project configuration.
+- `RUN_PROTOCOL.md` — run and repository update protocol.
+- `.github/workflows/validate.yml` — repository validation workflow.
+- `.bootstrap/hardened-source/` — content-hashed secondary recovery archive retained for disaster recovery, not as the primary working tree.
 
-Before relying on a restored copy, verify the bundle SHA-256 against `.bootstrap/SHA256SUMS` and run the included test and validation commands.
+## Scientific boundary
 
-## Scientific integrity policy
+The program constructs an evidence-traceable scientific atlas. It does not design, synthesize, optimize, or provide production instructions for illicit or untested drugs.
 
-Vector similarity is retrieval only, never evidence. Claims begin in quarantine and may enter the canonical graph only after source identity verification, exact evidence anchoring, schema validation, independent extraction review, contradiction checks, and a recorded audit trail.
+## Current scientific state
 
-No scientific claims have been ingested in the initial infrastructure release.
+This persistence-recovery checkpoint adds no biomedical source, paper dossier, evidence span, biological entity, scientific claim, contradiction, graph node, or graph edge. Scientific ingestion remains blocked until Module 0 infrastructure hardening is completed against the directly visible source tree.
