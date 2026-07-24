@@ -1,0 +1,10 @@
+{
+  "archive_sha256": "3ea0d3e47398b4b41dc9673c94359dffbf9aa543ef7e943e3ab842229174cc56",
+  "database_sha256": "f8f7509d5e371527cfbf39ea73d808416e4a2b71472114a62485c7c1bea81ab9",
+  "manifest": "checkpoints/ocsa-20260724-module0-hardening-001/manifest.json",
+  "materializer": "checkpoints/ocsa-20260724-module0-hardening-001/materialize.py",
+  "release_version": "v0.2.0-infra-checkpoint.1",
+  "run_id": "ocsa-20260724-module0-hardening-001",
+  "scientific_claims": 0,
+  "status": "validated_persistent_checkpoint"
+}
