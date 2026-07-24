@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - agent/ocsa-infrastructure-hardening-20260723
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
