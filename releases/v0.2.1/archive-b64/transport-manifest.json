@@ -1,0 +1,57 @@
+{
+  "archive_path": "releases/v0.2.1/OCSA_v0.2.1-infra.zip",
+  "archive_sha256": "f32c9231926a0adcc30472e08ed143b8d53a1ee0cd743a3723bf71dd7d097f29",
+  "archive_size_bytes": 149897,
+  "chunk_characters": 60000,
+  "encoding": "base64",
+  "manifest_version": "0.2.1",
+  "materialized_files": [
+    {
+      "path": "atlas.db",
+      "sha256": "51bc02e700a7f2dd355ab393391f7648e53ac62bb2aab6f546c575dbf8cd2895",
+      "size_bytes": 385024
+    },
+    {
+      "path": "snapshots/ocsa-20260724-module0-repair-002-post-run-checkpoint.db",
+      "sha256": "6efccfdcdbe460a86d73a2145cf8d5fe081510fc4e0052aff5ffe85f75a81e72",
+      "size_bytes": 376832
+    },
+    {
+      "path": "snapshots/ocsa-20260724-module0-repair-002-post-run.db",
+      "sha256": "51bc02e700a7f2dd355ab393391f7648e53ac62bb2aab6f546c575dbf8cd2895",
+      "size_bytes": 385024
+    },
+    {
+      "path": "snapshots/ocsa-20260724-module0-repair-002-post-staging.db",
+      "sha256": "5cd32aa1b443ffc71eff70a67dba7e9226eb8c3441e4bcf028d8da597ccfec0f",
+      "size_bytes": 376832
+    },
+    {
+      "path": "snapshots/ocsa-20260724-module0-repair-002-pre-run.db",
+      "sha256": "49ef2d0d077fd79b60e0e37b7bbf4f5354eb965ed59033b6413bf44f2c1b09cd",
+      "size_bytes": 376832
+    }
+  ],
+  "parts": [
+    {
+      "path": "releases/v0.2.1/archive-b64/part-000.b64",
+      "sha256": "62d483c16c3716e104a395a9abe9982bc7f2089341d1961e6f2c8540083d8cbb",
+      "size_bytes": 60001
+    },
+    {
+      "path": "releases/v0.2.1/archive-b64/part-001.b64",
+      "sha256": "0d74c01499a8d0728bea14f351da54ee8c97cade3ca0f89b4e8e10789ef55c04",
+      "size_bytes": 60001
+    },
+    {
+      "path": "releases/v0.2.1/archive-b64/part-002.b64",
+      "sha256": "a48a074be37f2275f84e4a4bc2d54ee337e13b88dbf94edb8f4835fca0060793",
+      "size_bytes": 60001
+    },
+    {
+      "path": "releases/v0.2.1/archive-b64/part-003.b64",
+      "sha256": "48cb6f84a20a2b8ef6b8e73843e5922c6d22a810dc5537314aa34fd3c725df91",
+      "size_bytes": 19865
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "manifest_version": "0.2.1",
+  "run_id": "ocsa-20260724-module0-repair-002",
+  "scope": "Repository audit and infrastructure repair only",
+  "scientific_databases": [],
+  "scientific_search_strings": [],
+  "repository_queries": [
+    "Inspect pull request #1 state and head checks",
+    "Inspect main README, schema, store, workflow, source manifest, open questions, and release state"
+  ],
+  "inclusion_criteria": [
+    "Files and artifacts required to assess or harden OCSA trust architecture"
+  ],
+  "exclusion_criteria": [
+    "Scientific literature and biological claims, because the infrastructure gate remained blocking"
+  ],
+  "saturation_status": "not_applicable"
+}

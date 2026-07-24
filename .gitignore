@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.build/
+build/
+*.db-wal
+*.db-shm
+.DS_Store
+/atlas.db
+/snapshots/*.db
+/releases/v0.2.1/OCSA_v0.2.1-infra.zip

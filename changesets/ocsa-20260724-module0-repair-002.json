@@ -1,0 +1,37 @@
+{
+  "claims_accepted": 0,
+  "claims_disputed_or_rejected": 0,
+  "claims_proposed": 0,
+  "claims_verified": 0,
+  "contradictions_created": 0,
+  "date": "2026-07-24",
+  "edges_added": 0,
+  "evidence_spans_created": 0,
+  "final_database_sha256": "51bc02e700a7f2dd355ab393391f7648e53ac62bb2aab6f546c575dbf8cd2895",
+  "module": "Module 0: Governance and infrastructure",
+  "next_start": "Resolve remote Actions runner, merge infrastructure PR, then start Module 1 receptor nomenclature and authoritative identifiers.",
+  "nodes_added": 0,
+  "open_questions_added": 4,
+  "paper_dossiers_created": 0,
+  "parent_database_hash_status": "unavailable_legacy_bootstrap",
+  "parent_git_commit": "b06dbc8df402c245684914693e9f3f7f93c31067",
+  "post_run_checkpoint_sha256": "6efccfdcdbe460a86d73a2145cf8d5fe081510fc4e0052aff5ffe85f75a81e72",
+  "post_staging_snapshot_sha256": "5cd32aa1b443ffc71eff70a67dba7e9226eb8c3441e4bcf028d8da597ccfec0f",
+  "pre_run_snapshot_sha256": "49ef2d0d077fd79b60e0e37b7bbf4f5354eb965ed59033b6413bf44f2c1b09cd",
+  "promotion_status": "not_promoted",
+  "remote_ci": "pending_runner_start",
+  "run_id": "ocsa-20260724-module0-repair-002",
+  "scientific_source_files_archived": 0,
+  "scientific_sources_discovered": 0,
+  "scientific_sources_excluded": 0,
+  "scientific_sources_retained": 0,
+  "scope": "Audit the canonical repository and repair Module 0 trust architecture; do not ingest scientific literature or biological claims.",
+  "tests": {
+    "passed": true
+  },
+  "validation": {
+    "blocking_count": 0,
+    "passed": true,
+    "warning_count": 0
+  }
+}

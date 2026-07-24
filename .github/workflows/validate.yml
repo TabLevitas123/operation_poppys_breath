@@ -1,0 +1,98 @@
+name: Validate OCSA infrastructure candidate
+
+on:
+  push:
+    branches:
+      - main
+      - agent/**
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ocsa-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Compile Python sources
+        run: |
+          set -Eeuo pipefail
+          python -m compileall -q src scripts tests
+
+      - name: Reconstruct hash-verified binary artifacts
+        run: |
+          set -Eeuo pipefail
+          rm -rf .build
+          mkdir -p .build
+          python scripts/materialize_artifacts.py \
+            --root . \
+            --manifest releases/v0.2.1/archive-b64/transport-manifest.json \
+            --output .build/materialization.json
+
+      - name: Verify published repository checksums
+        run: |
+          set -Eeuo pipefail
+          sha256sum --check SHA256SUMS
+
+      - name: Initialize and validate a clean database
+        run: |
+          set -Eeuo pipefail
+          python src/ocsa_store.py --db .build/clean.db --schema schema.sql --root . init
+          python src/ocsa_store.py --db .build/clean.db --schema schema.sql --root . validate --output .build/clean-validation.json
+
+      - name: Run unit and corruption-injection tests
+        run: |
+          set -Eeuo pipefail
+          python -m unittest discover -s tests -v | tee .build/tests.txt
+
+      - name: Rebuild release candidate
+        run: |
+          set -Eeuo pipefail
+          python scripts/build_release.py --root . --timestamp 2026-07-24T15:30:00Z --output .build/build-result.json
+
+      - name: Confirm deterministic committed text and transport artifacts
+        run: |
+          set -Eeuo pipefail
+          git diff --exit-code
+          unexpected="$(git status --porcelain --untracked-files=all | grep -v '^?? \.build/' || true)"
+          test -z "$unexpected" || { printf '%s\n' "$unexpected"; exit 1; }
+
+      - name: Re-verify repository checksums
+        run: |
+          set -Eeuo pipefail
+          sha256sum --check SHA256SUMS
+
+      - name: Restore published archive in a clean directory
+        run: |
+          set -Eeuo pipefail
+          python scripts/verify_release.py releases/v0.2.1/OCSA_v0.2.1-infra.zip --output .build/restore-report.json
+
+      - name: Upload validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocsa-validation-${{ github.sha }}
+          path: |
+            .build/
+            reports/
+            manifests/
+            releases/v0.2.1/restore-report.json
+          if-no-files-found: warn
+          retention-days: 14

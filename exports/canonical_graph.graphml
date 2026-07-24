@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+  <key id="name" for="node" attr.name="name" attr.type="string"/>
+  <key id="type" for="node" attr.name="type" attr.type="string"/>
+  <key id="predicate" for="edge" attr.name="predicate" attr.type="string"/>
+  <graph id="OCSA-canonical" edgedefault="directed">
+  </graph>
+</graphml>

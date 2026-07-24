@@ -1,0 +1,32 @@
+{
+  "project": "Opioid Causal Systems Atlas",
+  "short_name": "OCSA",
+  "schema_version": "0.2.1",
+  "validator_version": "0.2.1",
+  "search_protocol_version": "0.2.1",
+  "source_of_truth": "atlas.db",
+  "claim_default_state": "proposed",
+  "canonical_graph_state": "accepted",
+  "required_review_tier": 2,
+  "required_blind_verification_pass": 2,
+  "append_only_scientific_records": true,
+  "content_addressed_sources": true,
+  "tamper_evident_event_chains": true,
+  "exports": [
+    "JSONL",
+    "CSV",
+    "GraphML"
+  ],
+  "scientific_claims_seeded": false,
+  "mass_change_limits": {
+    "nodes_removed_absolute": 10,
+    "edges_removed_absolute": 20,
+    "fraction_removed": 0.25
+  },
+  "binary_artifact_transport": {
+    "encoding": "base64",
+    "manifest": "releases/v0.2.1/archive-b64/transport-manifest.json",
+    "materializer": "scripts/materialize_artifacts.py",
+    "overwrite_default": false
+  }
+}

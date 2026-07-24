@@ -1,0 +1,18 @@
+{
+  "archive": "releases/v0.2.1/OCSA_v0.2.1-infra.zip",
+  "archive_sha256": "f32c9231926a0adcc30472e08ed143b8d53a1ee0cd743a3723bf71dd7d097f29",
+  "checks": [
+    "zip_crc_and_safe_paths",
+    "manifest_hashes",
+    "required_files",
+    "outer_release_paths_reconstructed",
+    "restored_database_validation",
+    "restored_test_suite"
+  ],
+  "errors": [],
+  "passed": true,
+  "test_stderr": "test_accepted_claim_requires_every_canonical_gate (test_store.AtlasStoreTests.test_accepted_claim_requires_every_canonical_gate) ... ok\ntest_append_only_tables_reject_update_and_delete (test_store.AtlasStoreTests.test_append_only_tables_reject_update_and_delete) ... ok\ntest_binary_transport_reconstructs_and_detects_tampering (test_store.AtlasStoreTests.test_binary_transport_reconstructs_and_detects_tampering) ... ok\ntest_causal_overstatement_is_detected (test_store.AtlasStoreTests.test_causal_overstatement_is_detected) ... ok\ntest_clean_database_validates_and_defaults_to_proposed (test_store.AtlasStoreTests.test_clean_database_validates_and_defaults_to_proposed) ... ok\ntest_corrupt_database_header_returns_blocking_finding (test_store.AtlasStoreTests.test_corrupt_database_header_returns_blocking_finding) ... ok\ntest_evidence_excerpt_hash_mismatch_is_detected (test_store.AtlasStoreTests.test_evidence_excerpt_hash_mismatch_is_detected) ... ok\ntest_exports_are_byte_deterministic (test_store.AtlasStoreTests.test_exports_are_byte_deterministic) ... ok\ntest_foreign_key_corruption_is_detected (test_store.AtlasStoreTests.test_foreign_key_corruption_is_detected) ... ok\ntest_graph_diff_halts_on_mass_deletion (test_store.AtlasStoreTests.test_graph_diff_halts_on_mass_deletion) ... ok\ntest_invalid_claim_version_chain_is_rejected (test_store.AtlasStoreTests.test_invalid_claim_version_chain_is_rejected) ... ok\ntest_invalid_subject_predicate_object_is_blocking (test_store.AtlasStoreTests.test_invalid_subject_predicate_object_is_blocking) ... ok\ntest_new_claim_cannot_start_accepted (test_store.AtlasStoreTests.test_new_claim_cannot_start_accepted) ... ok\ntest_release_restore_and_manifest_corruption (test_store.AtlasStoreTests.test_release_restore_and_manifest_corruption) ... ok\ntest_run_event_hash_chain_tampering_is_detected (test_store.AtlasStoreTests.test_run_event_hash_chain_tampering_is_detected) ... ok\ntest_snapshot_tampering_is_detected (test_store.AtlasStoreTests.test_snapshot_tampering_is_detected) ... ok\ntest_source_file_tampering_is_detected (test_store.AtlasStoreTests.test_source_file_tampering_is_detected) ... ok\ntest_test_report_timing_is_normalized (test_store.AtlasStoreTests.test_test_report_timing_is_normalized) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in <normalized>s\n\nOK\n",
+  "test_stdout": "",
+  "validation_stderr": "",
+  "validation_stdout": "{\n  \"blocking_count\": 0,\n  \"database_sha256\": \"51bc02e700a7f2dd355ab393391f7648e53ac62bb2aab6f546c575dbf8cd2895\",\n  \"finding_count\": 0,\n  \"findings\": [],\n  \"passed\": true,\n  \"validator_version\": \"0.2.1\",\n  \"warning_count\": 0\n}\n"
+}

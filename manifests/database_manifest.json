@@ -1,0 +1,98 @@
+{
+  "database": {
+    "path": "atlas.db",
+    "sha256": "51bc02e700a7f2dd355ab393391f7648e53ac62bb2aab6f546c575dbf8cd2895",
+    "size_bytes": 385024
+  },
+  "exports": [
+    {
+      "path": "exports/canonical_graph.csv",
+      "sha256": "1069529c2392363d6dd0f29527225a68011222feb1c74f1508250366d5515800",
+      "size_bytes": 174
+    },
+    {
+      "path": "exports/canonical_graph.graphml",
+      "sha256": "90830299c31353a16426b0c6ed5b20975dba448515ba574d362a6f7944bd2733",
+      "size_bytes": 378
+    },
+    {
+      "path": "exports/canonical_graph.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "exports/contradiction_graph.csv",
+      "sha256": "3fc2304553e32c21f596fdd2f923f396444b48cd756c1f799ad13a7d72b5dc0c",
+      "size_bytes": 238
+    },
+    {
+      "path": "exports/contradiction_graph.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "exports/evidence_spans.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "exports/full_research_graph.csv",
+      "sha256": "9b9f4e15d2532d91cdc83e33169296e8fc057212b0f2183cbc789d16cb88c866",
+      "size_bytes": 241
+    },
+    {
+      "path": "exports/full_research_graph.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "exports/provisional_graph.csv",
+      "sha256": "9b9f4e15d2532d91cdc83e33169296e8fc057212b0f2183cbc789d16cb88c866",
+      "size_bytes": 241
+    },
+    {
+      "path": "exports/provisional_graph.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "exports/source_versions.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    }
+  ],
+  "manifest_version": "0.2.1",
+  "run_id": "ocsa-20260724-module0-repair-002",
+  "schema": {
+    "path": "schema.sql",
+    "sha256": "9675ca0e77335e64874ba79355769ff51b68a297db115148707bfef1826e979e",
+    "size_bytes": 36509
+  },
+  "snapshots": [
+    {
+      "path": "snapshots/ocsa-20260724-module0-repair-002-post-run-checkpoint.db",
+      "sha256": "6efccfdcdbe460a86d73a2145cf8d5fe081510fc4e0052aff5ffe85f75a81e72",
+      "size_bytes": 376832
+    },
+    {
+      "path": "snapshots/ocsa-20260724-module0-repair-002-post-run.db",
+      "sha256": "51bc02e700a7f2dd355ab393391f7648e53ac62bb2aab6f546c575dbf8cd2895",
+      "size_bytes": 385024
+    },
+    {
+      "path": "snapshots/ocsa-20260724-module0-repair-002-post-staging.db",
+      "sha256": "5cd32aa1b443ffc71eff70a67dba7e9226eb8c3441e4bcf028d8da597ccfec0f",
+      "size_bytes": 376832
+    },
+    {
+      "path": "snapshots/ocsa-20260724-module0-repair-002-pre-run.db",
+      "sha256": "49ef2d0d077fd79b60e0e37b7bbf4f5354eb965ed59033b6413bf44f2c1b09cd",
+      "size_bytes": 376832
+    }
+  ],
+  "validation": {
+    "blocking_count": 0,
+    "passed": true,
+    "warning_count": 0
+  }
+}

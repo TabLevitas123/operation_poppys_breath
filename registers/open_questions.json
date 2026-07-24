@@ -1,0 +1,34 @@
+{
+  "register_version": "0.2.1",
+  "run_id": "ocsa-20260724-module0-repair-002",
+  "questions": [
+    {
+      "id": "oq-infra-001",
+      "priority": "critical",
+      "status": "open",
+      "question": "Why do GitHub-hosted Actions jobs fail before the first step and produce no downloadable job log?",
+      "rationale": "Remote CI must initialize and validate a clean database before scientific ingestion can begin."
+    },
+    {
+      "id": "oq-infra-002",
+      "priority": "high",
+      "status": "open",
+      "question": "Can the legacy bootstrap-only release database be recovered and its raw database SHA-256 recorded?",
+      "rationale": "The visible default branch identifies a Git bundle but does not directly expose the parent database hash. The repair run therefore records the parent Git commit and a migrated empty pre-run database instead of claiming a byte-identical legacy snapshot."
+    },
+    {
+      "id": "oq-infra-003",
+      "priority": "high",
+      "status": "open",
+      "question": "Will the repaired infrastructure pull request pass remote CI and be merged into main?",
+      "rationale": "Module 1 must not begin while the canonical default branch remains on the defective bootstrap architecture."
+    },
+    {
+      "id": "oq-module1-001",
+      "priority": "high",
+      "status": "deferred",
+      "question": "What authoritative identifier and nomenclature source set should seed MOR, DOR, KOR, and NOP entity versions?",
+      "rationale": "This is the exact first scientific task after the infrastructure gate passes."
+    }
+  ]
+}
