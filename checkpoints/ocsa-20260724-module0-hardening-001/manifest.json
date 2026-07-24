@@ -1,0 +1,88 @@
+{
+  "archive": {
+    "filename": "OCSA_v0.2.0-infra-checkpoint.1.zip",
+    "sha256": "3ea0d3e47398b4b41dc9673c94359dffbf9aa543ef7e943e3ab842229174cc56",
+    "size_bytes": 84964
+  },
+  "encoding": "base64",
+  "manifest_version": "1.0",
+  "parts": [
+    {
+      "path": "chunks/part-000.b64",
+      "sha256": "6395700d32c9b1a8a88060a719dcc1a2ed5f71fc190765144df46e9ce360c93a",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-001.b64",
+      "sha256": "7d1216cbb6009f5291ec7b9375c02d5749daef3f4c17fe1b06713a39d70ef4e6",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-002.b64",
+      "sha256": "8d6d7a33f204924672e1107e7319d4c39724ffd58b3a45f93ecbdc1359a5e001",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-003.b64",
+      "sha256": "519fa8a84c5a2eb27e3ce4c5086f3e10caa82d0ddfd8a1f747ff822fe8715f32",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-004.b64",
+      "sha256": "2b5eda03fc5c95bb6f387ef48539263ff0b2cf8da68f1c87261ee78ad3d367e4",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-005.b64",
+      "sha256": "c275ced0631bc275469f89ef0d606b320fc48d2e5fef58c49203e58d4933f43f",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-006.b64",
+      "sha256": "f953ef2515fba532720d805ce8de0b40ecc0baf61702adc074a988d01e99c9de",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-007.b64",
+      "sha256": "0236ce8fbb68feada5f2831a441f57681fef6daab8964323ba309055a9e364c0",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-008.b64",
+      "sha256": "4f50be8da537b959da08dde969f39725c3fb534b2238571c22a0cdb7f2c2c6b0",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-009.b64",
+      "sha256": "4907b1d5e5417730227c7152f3d000bd957101f54110584466380a45322760a9",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-010.b64",
+      "sha256": "a1831508132ab3751f73f5f8e057df46c38745d7cdac963b36d9a4920065ddfb",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-011.b64",
+      "sha256": "f6f2a23030b5f38e9b8405b9fde7a3dc38c3d538fc755bded48e7250c859144f",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-012.b64",
+      "sha256": "928273cf98bab305e0506087ac9712ab21f98e094eeaabeb28f744b452723e9b",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-013.b64",
+      "sha256": "dafb5111233d8cba4fd732069a80e676c0d0156e87e4dbd1c1209bd7f3b33c0b",
+      "size_bytes": 8001
+    },
+    {
+      "path": "chunks/part-014.b64",
+      "sha256": "f572aa0869693884778b20f6143bb2d6c42db739f8c28a97d931d778a1073b2d",
+      "size_bytes": 1289
+    }
+  ],
+  "release_version": "v0.2.0-infra-checkpoint.1",
+  "run_id": "ocsa-20260724-module0-hardening-001"
+}
