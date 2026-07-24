@@ -1,0 +1,129 @@
+name: Audit materialized OCSA source
+
+on:
+  push:
+    branches:
+      - agent/ocsa-infrastructure-hardening-20260723
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out bootstrap branch
+        uses: actions/checkout@v4
+
+      - name: Verify and safely extract authenticated source payload
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p audit-logs materialized
+
+          (
+            cd .bootstrap/hardened-source
+            sha256sum --check SHA256SUMS
+            cat part-*.b64 > "$GITHUB_WORKSPACE/ocsa-source.tar.gz.b64"
+          ) 2>&1 | tee audit-logs/bootstrap-part-hashes.log
+
+          echo 'ad8b321dc2c7cfabbc9d9c6710061f10289603686fdbec2785809e39e82e0473  ocsa-source.tar.gz.b64' \
+            | sha256sum --check - \
+            2>&1 | tee audit-logs/base64-payload-hash.log
+
+          base64 --decode ocsa-source.tar.gz.b64 > ocsa-source.tar.gz
+          echo '8bcc3a3b3c3e52dda85a77b1bb8aa0a088ba7ce75c0bf44f278f46df9d9e2192  ocsa-source.tar.gz' \
+            | sha256sum --check - \
+            2>&1 | tee audit-logs/archive-hash.log
+
+          python - <<'PY' 2>&1 | tee audit-logs/archive-safety.log
+          import pathlib
+          import tarfile
+
+          archive = pathlib.Path('ocsa-source.tar.gz')
+          destination = pathlib.Path('materialized').resolve()
+          with tarfile.open(archive, 'r:gz') as handle:
+              members = handle.getmembers()
+              for member in members:
+                  path = pathlib.PurePosixPath(member.name)
+                  if path.is_absolute() or '..' in path.parts:
+                      raise SystemExit(f'unsafe archive path: {member.name}')
+                  if member.issym() or member.islnk():
+                      raise SystemExit(f'archive link rejected: {member.name}')
+              handle.extractall(destination)
+          print(f'extracted {len(members)} members to {destination}')
+          PY
+
+          find materialized -type f -print0 \
+            | sort -z \
+            | xargs -0 sha256sum \
+            > audit-logs/materialized-file-hashes.txt
+          find materialized -type f -printf '%P\n' | sort > audit-logs/materialized-file-list.txt
+
+          test -f materialized/schema.sql
+          test -f materialized/src/ocsa_store.py
+          test -f materialized/tests/test_store.py
+          test -f materialized/scripts/build_infrastructure_release.py
+          test -f materialized/RESEARCH_PROTOCOL.md
+
+      - name: Install declared dependencies
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          if [[ -f materialized/requirements.txt ]]; then
+            python -m pip install --disable-pip-version-check -r materialized/requirements.txt \
+              2>&1 | tee audit-logs/dependency-install.log
+          else
+            echo 'No requirements.txt present' | tee audit-logs/dependency-install.log
+          fi
+
+      - name: Run clean-database validation
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          cd materialized
+          rm -f atlas.db
+          python src/ocsa_store.py init 2>&1 | tee ../audit-logs/clean-init.log
+          python src/ocsa_store.py validate 2>&1 | tee ../audit-logs/clean-validate.log
+
+      - name: Run automated and corruption-injection tests
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          cd materialized
+          python -m unittest discover -s tests -v 2>&1 | tee ../audit-logs/tests.log
+
+      - name: Build and verify infrastructure release
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          cd materialized
+          python scripts/build_infrastructure_release.py 2>&1 | tee ../audit-logs/release-build.log
+
+      - name: Record audit environment
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "event=${GITHUB_EVENT_NAME}"
+            echo "actor=${GITHUB_ACTOR}"
+            echo "runner_os=${RUNNER_OS}"
+            python --version
+            python -m pip --version
+          } > audit-logs/environment.txt
+
+      - name: Upload extracted source and audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocsa-materialized-source-audit
+          path: |
+            materialized/
+            audit-logs/
+            ocsa-source.tar.gz
+          if-no-files-found: error
+          retention-days: 30
