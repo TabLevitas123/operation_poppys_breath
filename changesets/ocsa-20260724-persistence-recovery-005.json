@@ -1,0 +1,31 @@
+{
+  "run_id": "ocsa-20260724-persistence-recovery-005",
+  "date": "2026-07-24",
+  "module": "Module 0: repository persistence repair",
+  "scope": "Restore the normal visible source tree and preserve a secondary recovery archive without scientific ingestion.",
+  "parent_commit": "2d19592b2c34deffd37c6061ed2293ef6dc6c3ba",
+  "restored_from_commit": "b06dbc8df402c245684914693e9f3f7f93c31067",
+  "files_restored": [
+    ".github/workflows/validate.yml",
+    "RUN_PROTOCOL.md",
+    "config.json",
+    "requirements.txt",
+    "schema.sql",
+    "src/ocsa_store.py",
+    "tests/test_store.py"
+  ],
+  "secondary_archive_parts_preserved": 10,
+  "scientific_sources": 0,
+  "paper_dossiers": 0,
+  "evidence_spans": 0,
+  "claims_proposed": 0,
+  "claims_verified": 0,
+  "claims_accepted": 0,
+  "claims_disputed_or_rejected": 0,
+  "contradictions": 0,
+  "nodes_added": 0,
+  "edges_added": 0,
+  "fresh_runtime_tests": "not_run",
+  "verification": "Git blob identity verified for restored source and archive parts",
+  "next_start": "Validate and harden the directly visible Module 0 source, commit generated artifacts, then begin Module 1 only after the infrastructure gate passes."
+}

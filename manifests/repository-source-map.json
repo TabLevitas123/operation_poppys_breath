@@ -1,0 +1,20 @@
+{
+  "manifest_version": "1.0",
+  "checkpoint_id": "ocsa-20260724-persistence-recovery-005",
+  "restored_from_commit": "b06dbc8df402c245684914693e9f3f7f93c31067",
+  "visible_source_blobs": {
+    ".github/workflows/validate.yml": "a61cc4b835db729eef2929e29a7158bb4209efff",
+    "RUN_PROTOCOL.md": "d1f891800bb82f8fe193f32f3abb67244786d87f",
+    "config.json": "bb51a050e1c348272022f3a927793c3d898f0bc1",
+    "requirements.txt": "566e17e89e1c98452d47004f3f6d8d357df5d61c",
+    "schema.sql": "412b6c653b158d295474516ba8417d353f1c3dce",
+    "src/ocsa_store.py": "54e74de2d580b7358d349dbb889ff4dbe4bb0963",
+    "tests/test_store.py": "88e886e61d6580d01ca14d2411f9d28de9ce6843"
+  },
+  "secondary_archive": {
+    "directory": ".bootstrap/hardened-source",
+    "part_count": 10,
+    "concatenated_base64_sha256": "ad8b321dc2c7cfabbc9d9c6710061f10289603686fdbec2785809e39e82e0473",
+    "decoded_tar_gz_sha256": "8bcc3a3b3c3e52dda85a77b1bb8aa0a088ba7ce75c0bf44f278f46df9d9e2192"
+  }
+}

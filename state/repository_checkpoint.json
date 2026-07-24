@@ -1,0 +1,26 @@
+{
+  "checkpoint_id": "ocsa-20260724-persistence-recovery-005",
+  "date": "2026-07-24",
+  "parent_commit": "2d19592b2c34deffd37c6061ed2293ef6dc6c3ba",
+  "restored_from_commit": "b06dbc8df402c245684914693e9f3f7f93c31067",
+  "canonical_persistence": "GitHub repository",
+  "transient_workspace": "/mnt/data",
+  "working_tree_directly_inspectable": true,
+  "secondary_archive_preserved": true,
+  "scientific_ingestion": {
+    "sources": 0,
+    "paper_dossiers": 0,
+    "evidence_spans": 0,
+    "entities": 0,
+    "claims": 0,
+    "contradictions": 0,
+    "nodes": 0,
+    "edges": 0
+  },
+  "verification": {
+    "restored_source_blob_identity_verified": true,
+    "archive_part_blob_identity_verified": true,
+    "fresh_runtime_test_run": false,
+    "fresh_runtime_test_reason": "This checkpoint repairs durable repository layout using existing immutable Git blobs. Executable infrastructure hardening and validation remain the next bounded task."
+  }
+}
