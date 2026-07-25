@@ -1,0 +1,21 @@
+{
+  "files": [
+    {"path": "runs/LATEST_STAGING.json", "sha256": "0f556d1fe61a423c2c9092c1ce708ae0977c633b75cc9ada68ae8ca1fa934c43", "size_bytes": 313},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/changeset.json", "sha256": "904f8efe5a30a226a2a008f8be24943a1651b16bf4874d3ee89460ee53a86ec4", "size_bytes": 1264},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/entities.jsonl", "sha256": "091aef92fb8f63b0427302a5176b0371835a594d9327faccfd55cc1b5bc92b62", "size_bytes": 4359},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/evidence_spans.jsonl", "sha256": "0d6c00e64b542e12a5048aac070b5aa03c37a9539d2f9fca26c249e70123daa4", "size_bytes": 8069},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/graph_diff.json", "sha256": "243e2b4cf58369180373dc9964a4a5efbb466cb78d0e7d0cbf1c6e113b02f306", "size_bytes": 491},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/open_questions.json", "sha256": "324d65a60e363dafa9a6998eeb94a8d46de44fc51345fdaaf8cd8108353004b3", "size_bytes": 1047},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/proposed_assertions.jsonl", "sha256": "48668b013ec0cf79a047a9545b797116cbfb29f333eb84ad25f3db897fdfdefe", "size_bytes": 7385},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/run-report.md", "sha256": "77e7c3dcf2a61780771775f0519c4b74dc6a41c43ce18f66ac84f55115b1b07f", "size_bytes": 2430},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/run.json", "sha256": "f3459daefea769c46fd6264e98ea0eb4528745e514a74b898946c294636d818f", "size_bytes": 556},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/search_manifest.json", "sha256": "98b48e07ab66492a2ff07d4971a7c76ce2d805f58a7518dcf70d65af4e3f1656", "size_bytes": 2786},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/source_manifest.json", "sha256": "4f972185b9d505a15f439ba09d18bad3d13c6e8418f1dc6a069bbe02841d8665", "size_bytes": 9319},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/test_results.json", "sha256": "9f2419e169720a51494d098ae4ea697e8d1ac9de660a8bc6993afeb188869b51", "size_bytes": 1847},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/validation_report.json", "sha256": "a08452a5cdfd354636b1701eff9a2fdcc8a9fbc6d63693cfb58b38118656f609", "size_bytes": 529},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/verification-report.md", "sha256": "5192b67f5bf48cbd70902890c1956bda66c0a73a43c89bd41f1dbbe7be73e7e2", "size_bytes": 625},
+    {"path": "runs/ocsa-20260725-module1-receptor-identifiers-001/verification.jsonl", "sha256": "231995cea724b451f150932bccaae7a8afef8d44943c760f58404cc30d390257", "size_bytes": 5556}
+  ],
+  "generated_at": "2026-07-25T10:50:28-04:00",
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001"
+}

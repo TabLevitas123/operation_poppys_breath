@@ -1,0 +1,20 @@
+{
+  "blocking_findings": [
+    {
+      "code": "SOURCE_FILE_NOT_ARCHIVED",
+      "count": 12,
+      "effect": "assertions cannot advance to accepted"
+    },
+    {
+      "code": "DATABASE_NOT_MATERIALIZED",
+      "count": 1,
+      "effect": "staging package not ingested into atlas.db"
+    }
+  ],
+  "canonical_release_allowed": false,
+  "nonblocking_findings": [],
+  "passed": true,
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001",
+  "staging_checkpoint_allowed": true,
+  "validator_version": "module1-staging-1.0"
+}

@@ -1,0 +1,53 @@
+{
+  "coverage_limit": "Identifier seed only; not literature saturation.",
+  "databases": [
+    "NCBI Gene",
+    "UniProtKB/Swiss-Prot",
+    "IUPHAR/BPS Guide to PHARMACOLOGY",
+    "HGNC (orientation and NCBI primary-source cross-check)"
+  ],
+  "exact_scope": "Human MOR/OPRM1, DOR/OPRD1, KOR/OPRK1 and NOP/OPRL1 authoritative nomenclature and stable identifier seed; no functional pharmacology or mechanistic claims.",
+  "excluded": [
+    {"reason": "wrong species", "title": "oprm1 [Xenopus tropicalis] NCBI Gene 100487937"},
+    {"reason": "wrong species", "title": "Oprm1 [Rattus norvegicus] NCBI Gene 25601"},
+    {"reason": "wrong species", "title": "Oprl1 mouse UniProt P35377"},
+    {"reason": "wrong species", "title": "OPRL1 pig UniProt P79292"},
+    {"reason": "unreviewed TrEMBL; not canonical reviewed protein entry", "title": "OPRL1 human UniProt A0A5F9ZI64"},
+    {"reason": "secondary duplicate of NCBI Gene identity record", "title": "OPRK1 GTR gene page"},
+    {"reason": "secondary duplicate of NCBI Gene identity record", "title": "OPRM1 GTR gene page"},
+    {"reason": "transcript/readthrough detail deferred to isoform submodule", "title": "OPRK1 transcript NM_001318497.2"}
+  ],
+  "excluded_candidate_count": 8,
+  "exclusion_criteria": [
+    "Non-human",
+    "Unreviewed protein when reviewed human entry exists",
+    "Secondary duplicate",
+    "Transcript/isoform detail outside seed batch",
+    "Functional or mechanistic assertions"
+  ],
+  "filters": ["Homo sapiens", "official/reviewed record", "opioid receptor family", "identity/nomenclature fields only"],
+  "inclusion_criteria": [
+    "Authoritative NCBI, UniProt, IUPHAR/BPS or HGNC record",
+    "Human record",
+    "Direct identifier or nomenclature evidence",
+    "Reviewed UniProt entry for canonical protein mapping"
+  ],
+  "retained_evidence_sources": 12,
+  "retained_orientation_sources": 2,
+  "retrieved_at": "2026-07-25T10:50:28-04:00",
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001",
+  "saturation_status": "not_assessed",
+  "screened_candidate_count": 22,
+  "search_date": "2026-07-25",
+  "search_strings": [
+    "site:ncbi.nlm.nih.gov/gene OPRM1 human",
+    "site:ncbi.nlm.nih.gov/gene OPRD1 human",
+    "site:ncbi.nlm.nih.gov/gene OPRK1 human",
+    "site:ncbi.nlm.nih.gov/gene OPRL1 human",
+    "site:uniprot.org/uniprotkb OPRM1 Homo sapiens reviewed",
+    "site:uniprot.org/uniprotkb OPRD1 Homo sapiens reviewed",
+    "site:uniprot.org/uniprotkb OPRK1 Homo sapiens reviewed",
+    "site:uniprot.org/uniprotkb OPRL1 Homo sapiens reviewed",
+    "site:guidetopharmacology.org opioid receptor mu delta kappa NOP"
+  ]
+}

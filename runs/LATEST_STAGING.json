@@ -1,0 +1,8 @@
+{
+  "canonical_graph_changed": false,
+  "module": "Module 1",
+  "path": "runs/ocsa-20260725-module1-receptor-identifiers-001",
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001",
+  "status": "validated_staging_checkpoint",
+  "submodule": "1A authoritative human receptor nomenclature and identifiers"
+}
