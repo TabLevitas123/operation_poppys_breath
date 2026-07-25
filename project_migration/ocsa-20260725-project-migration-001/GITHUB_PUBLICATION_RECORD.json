@@ -1,0 +1,27 @@
+{
+  "continuity_metadata_change": "state/RECOVERY_INDEX.json archive size corrected to 624898; full gate passed afterward",
+  "created_at": "2026-07-25T23:03:46+00:00",
+  "database_changed": false,
+  "first_conversation_prompt_sha256": "1d5192e44cd4b5528cfe62bb0b1ae2700cbda6beca6bd95e52556bbf960e4acd",
+  "library_paths": [
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/PROJECT_MIGRATION_PACK_BACKUP.zip",
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/PROJECT_UPLOAD_MANIFEST.json",
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/MIGRATION_RUN_REPORT.md",
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/MIGRATION_VALIDATION_REPORT.json",
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/MIGRATION_CHANGESET.json"
+  ],
+  "migration_bundle_sha256": "6b855a39f434515b754e6a05b631ef21a283fae7f5e9abb16f018a2db43a1c4d",
+  "migration_changeset_sha256": "9286b9746e7f1e00f68d1e8739af48ee0dc7654d5a87281a67929bf267b7abae",
+  "migration_run_id": "ocsa-20260725-project-migration-001",
+  "migration_validation_sha256": "237f6a1c3605b5641334c966830e2b340f5200104c1a1b8800788dc249f925d5",
+  "parent_checkpoint": "ocsa-20260725-continuity-hardening-006",
+  "project_index_sha256": "552cabb52dec8fb4a7868ef698675079d08a38dbca133916587ce01a4a3ded1b",
+  "project_instructions_sha256": "b71715e0527ee30aad4bd310d05bd280aa6b1afed231fbdb0116bf38ca411019",
+  "release_version": "v0.2.2-continuity.6",
+  "schema_changed": false,
+  "scientific_state_changed": false,
+  "selected_project_file_count": 40,
+  "status": "validated_and_persisted_to_library_pending_github_merge",
+  "upload_batches": 4,
+  "upload_manifest_sha256": "fc3c638aca3f99b4475da6c4995c42f224ce0752052c2a6187b33317816e623b"
+}
