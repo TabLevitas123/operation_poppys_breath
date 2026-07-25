@@ -1,0 +1,36 @@
+{
+  "manifest_version": "1.0",
+  "source_repository": "TabLevitas123/operation_poppys_breath",
+  "source_commit": "505515ed3c9bacf0e30267f8cf38f7a626c9ff57",
+  "original_repository_zip_sha256": "608dc611ddc80e9ce0979ac0081f6bd87ebca3181cc49831872ec833d9bb9a94",
+  "source_bundle": {
+    "path": "recovery/current-source.tar.gz",
+    "sha256": "9ed862493badb93c2545b4a9d723bf9b8a1a14fbfb08d18519c1f9851bc85ef9"
+  },
+  "sql_bundle": {
+    "path": "recovery/atlas.sql.gz",
+    "gzip_sha256": "7e1f7d75062d1a5259032823bfb4a08630dc5a086ac2f1fba55e9ff23df3a2f8",
+    "sql_sha256": "972fc885ab66b7f905833982c80f389bda7aedf38a18062cb4222124ee6ea957",
+    "logical_sha256": "1834bfda7ad074992083d64603bb317af0d80000637866296de460b2beb5f0e2"
+  },
+  "snapshots_bundle": {
+    "path": "recovery/snapshots.tar.gz",
+    "sha256": "f58ba42d46006f1dda5f48361cf02678bff0158cf2141bb441e654c867f50a4c"
+  },
+  "overlay_bundle": {
+    "path": "recovery/final-overlays.tar.gz",
+    "sha256": "a8f25e03768d40384ecf5af744c44d088ff33767e1c87a24bfbd4c315912aeab"
+  },
+  "scientific_state": {
+    "entities": 12,
+    "evidence_spans": 12,
+    "provisional_claims": 12,
+    "accepted_claims": 0,
+    "canonical_edges": 0
+  },
+  "verified": {
+    "automated_tests": 23,
+    "fresh_exact_checkpoint_created": true,
+    "user_upload_required": false
+  }
+}
