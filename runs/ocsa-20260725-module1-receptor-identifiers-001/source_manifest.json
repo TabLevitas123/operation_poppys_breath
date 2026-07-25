@@ -1,0 +1,51 @@
+{
+  "archive_gap": {
+    "effect": "Assertions remain proposed and canonical graph is unchanged.",
+    "reason": "Execution container could not resolve github.com for direct checkpoint materialization; full source-page files were not downloaded.",
+    "status": "blocking_for_acceptance"
+  },
+  "database_record_sources": [
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "NCBI Gene", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRM1-NCBI_GENE", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "OPRM1 opioid receptor mu 1 [Homo sapiens]", "url": "https://www.ncbi.nlm.nih.gov/gene/4988"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "UniProtKB/Swiss-Prot", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRM1-UNIPROT", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "P35372 Mu-type opioid receptor Homo sapiens", "url": "https://www.uniprot.org/uniprotkb/P35372/entry"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "IUPHAR/BPS Guide to PHARMACOLOGY", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRM1-IUPHAR", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "μ receptor | Opioid receptors", "url": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=319"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "NCBI Gene", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRD1-NCBI_GENE", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "OPRD1 opioid receptor delta 1 [Homo sapiens]", "url": "https://www.ncbi.nlm.nih.gov/gene/4985"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "UniProtKB/Swiss-Prot", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRD1-UNIPROT", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "P41143 Delta-type opioid receptor Homo sapiens", "url": "https://www.uniprot.org/uniprotkb/P41143/entry"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "IUPHAR/BPS Guide to PHARMACOLOGY", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRD1-IUPHAR", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "δ receptor | Opioid receptors", "url": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?familyId=50&objectId=317"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "NCBI Gene", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRK1-NCBI_GENE", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "OPRK1 opioid receptor kappa 1 [Homo sapiens]", "url": "https://www.ncbi.nlm.nih.gov/gene/4986"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "UniProtKB/Swiss-Prot", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRK1-UNIPROT", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "P41145 Kappa-type opioid receptor Homo sapiens", "url": "https://www.uniprot.org/uniprotkb/P41145/entry"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "IUPHAR/BPS Guide to PHARMACOLOGY", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRK1-IUPHAR", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "κ receptor | Opioid receptors", "url": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=318"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "NCBI Gene", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRL1-NCBI_GENE", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "OPRL1 opioid related nociceptin receptor 1 [Homo sapiens]", "url": "https://www.ncbi.nlm.nih.gov/gene/4987"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "UniProtKB/Swiss-Prot", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRL1-UNIPROT", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "P41146 Nociceptin receptor Homo sapiens", "url": "https://www.uniprot.org/uniprotkb/P41146/entry"
+    },
+    {
+      "archive_status": "metadata_and_excerpt_only", "correction_retraction_status": "not_applicable_database_record", "database": "IUPHAR/BPS Guide to PHARMACOLOGY", "extraction_status": "structured_fields_extracted", "license_or_access_status": "public_web_access", "notes": "Full immutable page capture was not archived; canonical acceptance is blocked.", "retrieved_at": "2026-07-25T10:50:28-04:00", "source_file_sha256": null, "source_id": "SRC-OPRL1-IUPHAR", "source_type": "authoritative_database_record", "species": "Homo sapiens", "title": "NOP receptor | Opioid receptors", "url": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=320"
+    }
+  ],
+  "manifest_version": "1.0",
+  "metadata_and_excerpt_records": 12,
+  "missing_full_text": [],
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001",
+  "scientific_papers": [],
+  "source_files_archived": 0
+}

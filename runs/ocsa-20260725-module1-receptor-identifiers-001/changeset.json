@@ -1,0 +1,31 @@
+{
+  "assertions_pass2_verified": 12,
+  "assertions_proposed": 12,
+  "blocking_reasons": [
+    "immutable_source_files_not_archived",
+    "atlas_database_not_materialized_in_current_container"
+  ],
+  "canonical_edges_added": 0,
+  "canonical_nodes_added": 0,
+  "claims_accepted": 0,
+  "claims_disputed_or_rejected": 0,
+  "contradictions_identified": 0,
+  "database_record_dossiers_created": 12,
+  "date": "2026-07-25",
+  "evidence_spans_created": 12,
+  "module": "Module 1: receptor-family foundation",
+  "next_start": "Archive exact source records or lawful snapshots by content hash; restore checkpoint database; ingest staging records as proposed; run full validators and snapshots.",
+  "open_questions_added": 4,
+  "paper_dossiers_created": 0,
+  "parent_checkpoint": "ocsa-20260724-module0-hardening-001",
+  "parent_database_sha256": "f8f7509d5e371527cfbf39ea73d808416e4a2b71472114a62485c7c1bea81ab9",
+  "promotion_status": "staging_only",
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001",
+  "source_files_archived": 0,
+  "sources_discovered": 22,
+  "sources_excluded": 8,
+  "sources_retained": 14,
+  "staging_entities_added": 12,
+  "staging_mapping_edges_proposed": 8,
+  "submodule": "1A authoritative human receptor nomenclature and identifiers"
+}

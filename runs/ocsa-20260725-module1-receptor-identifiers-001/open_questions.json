@@ -1,0 +1,29 @@
+{
+  "questions": [
+    {
+      "id": "M1-OQ-001",
+      "priority": "high",
+      "question": "Which transcript and protein isoform should be the OCSA canonical reference for each receptor, reconciling MANE Select, RefSeq and UniProt canonical choices?",
+      "status": "open"
+    },
+    {
+      "id": "M1-OQ-002",
+      "priority": "high",
+      "question": "How should OPRM1 six-transmembrane isoforms be represented without conflating them with the canonical seven-transmembrane receptor?",
+      "status": "open"
+    },
+    {
+      "id": "M1-OQ-003",
+      "priority": "medium",
+      "question": "How should reported translational readthrough isoforms for OPRK1 and OPRL1 be versioned and linked to canonical proteins?",
+      "status": "open"
+    },
+    {
+      "id": "M1-OQ-004",
+      "priority": "critical",
+      "question": "What terminology guard should prevent historical OPRL1 aliases such as KOR-3 from being merged with OPRK1/KOR?",
+      "status": "open"
+    }
+  ],
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001"
+}

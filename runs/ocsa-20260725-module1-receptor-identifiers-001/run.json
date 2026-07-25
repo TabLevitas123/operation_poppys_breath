@@ -1,0 +1,12 @@
+{
+  "branch": "agent/ocsa-module1-receptor-identifiers-20260725",
+  "canonical_graph_changed": false,
+  "date": "2026-07-25",
+  "module": "Module 1",
+  "parent_checkpoint": "ocsa-20260724-module0-hardening-001",
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001",
+  "scope": "Human MOR/OPRM1, DOR/OPRD1, KOR/OPRK1 and NOP/OPRL1 authoritative nomenclature and stable identifier seed; no functional pharmacology or mechanistic claims.",
+  "started_at": "2026-07-25T10:50:28-04:00",
+  "status": "validated_staging_checkpoint",
+  "submodule": "1A"
+}

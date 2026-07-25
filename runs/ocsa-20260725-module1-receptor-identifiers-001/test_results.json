@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "run_id": "ocsa-20260725-module1-receptor-identifiers-001",
+  "test_count": 18,
+  "tests": [
+    {"details": "", "name": "four receptor records", "passed": true},
+    {"details": "", "name": "twelve source records", "passed": true},
+    {"details": "", "name": "twelve evidence spans", "passed": true},
+    {"details": "", "name": "twelve entities", "passed": true},
+    {"details": "", "name": "twelve proposed assertions", "passed": true},
+    {"details": "", "name": "twelve pass2 verifications", "passed": true},
+    {"details": "", "name": "all assertion states proposed", "passed": true},
+    {"details": "", "name": "no canonical eligible assertions", "passed": true},
+    {"details": "", "name": "unique source IDs", "passed": true},
+    {"details": "", "name": "unique evidence IDs", "passed": true},
+    {"details": "", "name": "unique entity IDs", "passed": true},
+    {"details": "", "name": "unique assertion IDs", "passed": true},
+    {"details": "", "name": "excerpt hashes valid", "passed": true},
+    {"details": "", "name": "stable identifier formats", "passed": true},
+    {"details": "", "name": "IUPHAR target IDs unique", "passed": true},
+    {"details": "", "name": "NOP and KOR remain separate", "passed": true},
+    {"details": "", "name": "canonical graph unchanged", "passed": true},
+    {"details": "", "name": "source archive gate recorded", "passed": true}
+  ]
+}
