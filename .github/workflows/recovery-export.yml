@@ -1,0 +1,40 @@
+name: Export OCSA recovery checkpoint
+
+on:
+  push:
+    branches:
+      - agent/ocsa-recovery-export-20260725
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Restore verified Module 0 checkpoint
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          rm -rf recovery-export
+          python checkpoints/ocsa-20260724-module0-hardening-001/materialize.py \
+            --archive-output recovery-export/OCSA_v0.2.0-infra-checkpoint.1.zip \
+            --extract-output recovery-export/project
+          mkdir -p recovery-export/repository-state
+          cp -a runs recovery-export/repository-state/
+          cp -a checkpoints/LATEST.json recovery-export/repository-state/
+          cp -a CHANGELOG.md README.md PERSISTENCE.md recovery-export/repository-state/
+          find recovery-export -type f -print0 | sort -z | xargs -0 sha256sum > recovery-export/SHA256SUMS
+
+      - name: Upload complete recovery package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocsa-recovery-export-${{ github.sha }}
+          path: recovery-export/
+          if-no-files-found: error
+          retention-days: 7
