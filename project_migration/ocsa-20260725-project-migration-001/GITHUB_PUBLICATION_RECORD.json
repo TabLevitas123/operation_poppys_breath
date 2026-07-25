@@ -1,0 +1,33 @@
+{
+  "branch": "agent/ocsa-project-migration-20260725",
+  "continuity_metadata_change": "state/RECOVERY_INDEX.json archive size corrected to 624898; full gate passed afterward",
+  "created_at": "2026-07-25T23:14:55+00:00",
+  "database_changed": false,
+  "hashes": {
+    "bundle": "4179ee0f54ced9d85fc6158f7bd8255f2de13f054700a65c6177a8d4bb6fb9e7",
+    "changeset": "c0cd9ca1ef26ce268026c14e2e07e411adbde133183c1f6235b8ad2216729c28",
+    "index": "1ab1a0a417fbdd972b6974dc91dddcb3bb8f5b2f445f3628e6a54f9fd9a01cba",
+    "instructions": "898c7e4adb27f29f8a2d71c02a5447c27b7e2e19264b187721dfde8247a54fad",
+    "manifest": "7f4894b9651ff074df28e6a304fb02815a46b9e3c4d884264fa5a9d7e006fff7",
+    "prompt": "1d5192e44cd4b5528cfe62bb0b1ae2700cbda6beca6bd95e52556bbf960e4acd",
+    "run_report": "085c49629240d31be57b6e895b6270340f2c803062af70e0df50b6951e104ccf",
+    "validation": "198078de8267ddc6c7b95c998385e3e10400dadbc8aa39d868b948bed16ce819"
+  },
+  "head_commit_before_final_control_update": "43a35116e30fa000a6c83eb2dd132dbe31ff1f9e",
+  "library_paths": [
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/PROJECT_MIGRATION_PACK_BACKUP.zip",
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/PROJECT_UPLOAD_MANIFEST.json",
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/MIGRATION_RUN_REPORT.md",
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/MIGRATION_VALIDATION_REPORT.json",
+    "/Operation_Poppys_Breath/project_migrations/ocsa-20260725-project-migration-001/MIGRATION_CHANGESET.json"
+  ],
+  "migration_run_id": "ocsa-20260725-project-migration-001",
+  "parent_checkpoint": "ocsa-20260725-continuity-hardening-006",
+  "pull_request": 5,
+  "release_version": "v0.2.2-continuity.6",
+  "schema_changed": false,
+  "scientific_state_changed": false,
+  "selected_project_file_count": 40,
+  "status": "validated_and_persisted_to_library_pending_github_merge",
+  "upload_batches": 4
+}

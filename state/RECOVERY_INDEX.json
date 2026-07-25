@@ -1,0 +1,61 @@
+{
+  "archive": {
+    "path": "OCSA_latest.zip",
+    "sha256": "a622851d272a667e5748d8d4f3efa419d6a0be1e414e4a2ac144d018bc0067ff",
+    "size_bytes": 624898
+  },
+  "bootstrap": {
+    "github_path": "scripts/bootstrap_restore.py",
+    "library_path": "/Operation_Poppys_Breath/BOOTSTRAP_RESTORE.py"
+  },
+  "checkpoint_id": "ocsa-20260725-continuity-hardening-006",
+  "created_at": "2026-07-25T22:13:43+00:00",
+  "database": {
+    "path": "atlas.db",
+    "sha256": "c220167791352e524586bd1be6fd3a43eebb05aa9a2663c1d016b319f22173a2",
+    "size_bytes": 307200
+  },
+  "durable_upload_complete": true,
+  "github": {
+    "branch": "main",
+    "commit": "9c8f3d345dc9371ccde40a44889fe6c8a07d301d",
+    "fallback_script": "scripts/restore_github_fallback.py",
+    "pull_request": 4,
+    "recovery_manifest": "recovery/GITHUB_RECOVERY_MANIFEST.json",
+    "repository": "TabLevitas123/operation_poppys_breath"
+  },
+  "index_version": "1.0",
+  "library": {
+    "bootstrap_file_id": "file_00000000f73c81f5af78372b6aca838d",
+    "contract_file_id": "file_000000008448822f8e6f23a78472ff72",
+    "stable_archive_file_id": "file_00000000563481f5bbf45b32210a9154",
+    "stable_database_file_id": "file_00000000b33081f5afbbb7d1146b7832",
+    "stable_paths": [
+      "/Operation_Poppys_Breath/OCSA_LATEST.zip",
+      "/Operation_Poppys_Breath/atlas_latest.db",
+      "/Operation_Poppys_Breath/BOOTSTRAP_RESTORE.py",
+      "/Operation_Poppys_Breath/RECOVERY_INDEX.json"
+    ]
+  },
+  "local_workspace": "/mnt/data/operation_poppys_breath",
+  "recovery_status": "verified_automatic_library_and_github_recovery",
+  "release_version": "v0.2.2-continuity.6",
+  "sql_recovery": {
+    "github_manifest_path": "recovery/atlas-sql-manifest.json",
+    "github_sql_path": "recovery/atlas.sql.gz",
+    "logical_sha256": "1834bfda7ad074992083d64603bb317af0d80000637866296de460b2beb5f0e2",
+    "sql_sha256": "972fc885ab66b7f905833982c80f389bda7aedf38a18062cb4222124ee6ea957",
+    "verified": true
+  },
+  "updated_at": "2026-07-25T22:48:38+00:00",
+  "verified": {
+    "automated_tests": 23,
+    "blocking_findings": 0,
+    "github_clean_self_healing_restore": true,
+    "library_byte_for_byte_readback": true,
+    "library_clean_bootstrap_restore": true,
+    "local_full_gate": true,
+    "user_upload_required": false,
+    "warnings": 0
+  }
+}
