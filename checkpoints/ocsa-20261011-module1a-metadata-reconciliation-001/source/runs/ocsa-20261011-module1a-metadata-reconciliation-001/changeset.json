@@ -1,0 +1,203 @@
+{
+  "baseline_database_sha256": "c220167791352e524586bd1be6fd3a43eebb05aa9a2663c1d016b319f22173a2",
+  "changes": {
+    "claim_reviews": [
+      {
+        "id": "VER-AST-OPRD1-GENE_IDENTITY-v2",
+        "supersedes": "VER-AST-OPRD1-GENE_IDENTITY"
+      },
+      {
+        "id": "VER-AST-OPRD1-GENE_TO_IUPHAR-v2",
+        "supersedes": "VER-AST-OPRD1-GENE_TO_IUPHAR"
+      },
+      {
+        "id": "VER-AST-OPRD1-GENE_TO_PROTEIN-v2",
+        "supersedes": "VER-AST-OPRD1-GENE_TO_PROTEIN"
+      },
+      {
+        "id": "VER-AST-OPRK1-GENE_IDENTITY-v2",
+        "supersedes": "VER-AST-OPRK1-GENE_IDENTITY"
+      },
+      {
+        "id": "VER-AST-OPRK1-GENE_TO_IUPHAR-v2",
+        "supersedes": "VER-AST-OPRK1-GENE_TO_IUPHAR"
+      },
+      {
+        "id": "VER-AST-OPRK1-GENE_TO_PROTEIN-v2",
+        "supersedes": "VER-AST-OPRK1-GENE_TO_PROTEIN"
+      },
+      {
+        "id": "VER-AST-OPRL1-GENE_IDENTITY-v2",
+        "supersedes": "VER-AST-OPRL1-GENE_IDENTITY"
+      },
+      {
+        "id": "VER-AST-OPRL1-GENE_TO_IUPHAR-v2",
+        "supersedes": "VER-AST-OPRL1-GENE_TO_IUPHAR"
+      },
+      {
+        "id": "VER-AST-OPRL1-GENE_TO_PROTEIN-v2",
+        "supersedes": "VER-AST-OPRL1-GENE_TO_PROTEIN"
+      },
+      {
+        "id": "VER-AST-OPRM1-GENE_IDENTITY-v2",
+        "supersedes": "VER-AST-OPRM1-GENE_IDENTITY"
+      },
+      {
+        "id": "VER-AST-OPRM1-GENE_TO_IUPHAR-v2",
+        "supersedes": "VER-AST-OPRM1-GENE_TO_IUPHAR"
+      },
+      {
+        "id": "VER-AST-OPRM1-GENE_TO_PROTEIN-v2",
+        "supersedes": "VER-AST-OPRM1-GENE_TO_PROTEIN"
+      }
+    ],
+    "entity_versions": [
+      {
+        "id": "ENT-IUPHAR-317-v2",
+        "supersedes": "ENT-IUPHAR-317-v1"
+      },
+      {
+        "id": "ENT-IUPHAR-318-v2",
+        "supersedes": "ENT-IUPHAR-318-v1"
+      },
+      {
+        "id": "ENT-IUPHAR-319-v2",
+        "supersedes": "ENT-IUPHAR-319-v1"
+      },
+      {
+        "id": "ENT-IUPHAR-320-v2",
+        "supersedes": "ENT-IUPHAR-320-v1"
+      }
+    ],
+    "evidence_spans": [
+      {
+        "id": "EV-OPRD1-NCBI_GENE-v2",
+        "supersedes": "EV-OPRD1-NCBI_GENE"
+      },
+      {
+        "id": "EV-OPRD1-UNIPROT-v2",
+        "supersedes": "EV-OPRD1-UNIPROT"
+      },
+      {
+        "id": "EV-OPRK1-NCBI_GENE-v2",
+        "supersedes": "EV-OPRK1-NCBI_GENE"
+      },
+      {
+        "id": "EV-OPRK1-UNIPROT-v2",
+        "supersedes": "EV-OPRK1-UNIPROT"
+      },
+      {
+        "id": "EV-OPRL1-NCBI_GENE-v2",
+        "supersedes": "EV-OPRL1-NCBI_GENE"
+      },
+      {
+        "id": "EV-OPRL1-UNIPROT-v2",
+        "supersedes": "EV-OPRL1-UNIPROT"
+      },
+      {
+        "id": "EV-OPRM1-NCBI_GENE-v2",
+        "supersedes": "EV-OPRM1-NCBI_GENE"
+      },
+      {
+        "id": "EV-OPRM1-UNIPROT-v2",
+        "supersedes": "EV-OPRM1-UNIPROT"
+      }
+    ],
+    "source_versions": [
+      {
+        "id": "SRC-OPRD1-IUPHAR-v2",
+        "supersedes": "SRC-OPRD1-IUPHAR-v1"
+      },
+      {
+        "id": "SRC-OPRD1-NCBI_GENE-v2",
+        "supersedes": "SRC-OPRD1-NCBI_GENE-v1"
+      },
+      {
+        "id": "SRC-OPRD1-UNIPROT-v2",
+        "supersedes": "SRC-OPRD1-UNIPROT-v1"
+      },
+      {
+        "id": "SRC-OPRK1-IUPHAR-v2",
+        "supersedes": "SRC-OPRK1-IUPHAR-v1"
+      },
+      {
+        "id": "SRC-OPRK1-NCBI_GENE-v2",
+        "supersedes": "SRC-OPRK1-NCBI_GENE-v1"
+      },
+      {
+        "id": "SRC-OPRK1-UNIPROT-v2",
+        "supersedes": "SRC-OPRK1-UNIPROT-v1"
+      },
+      {
+        "id": "SRC-OPRL1-IUPHAR-v2",
+        "supersedes": "SRC-OPRL1-IUPHAR-v1"
+      },
+      {
+        "id": "SRC-OPRL1-NCBI_GENE-v2",
+        "supersedes": "SRC-OPRL1-NCBI_GENE-v1"
+      },
+      {
+        "id": "SRC-OPRL1-UNIPROT-v2",
+        "supersedes": "SRC-OPRL1-UNIPROT-v1"
+      },
+      {
+        "id": "SRC-OPRM1-IUPHAR-v2",
+        "supersedes": "SRC-OPRM1-IUPHAR-v1"
+      },
+      {
+        "id": "SRC-OPRM1-NCBI_GENE-v2",
+        "supersedes": "SRC-OPRM1-NCBI_GENE-v1"
+      },
+      {
+        "id": "SRC-OPRM1-UNIPROT-v2",
+        "supersedes": "SRC-OPRM1-UNIPROT-v1"
+      }
+    ]
+  },
+  "changeset_id": "ocsa-20261011-module1a-metadata-reconciliation-001",
+  "claim_promotion": "none",
+  "counts": {
+    "canonical_graph": 0,
+    "claim_reviews": 24,
+    "claim_versions": 12,
+    "current_claim_reviews": 12,
+    "current_entity_versions": 12,
+    "current_evidence_spans": 12,
+    "current_source_versions": 12,
+    "entity_versions": 16,
+    "evidence_spans": 20,
+    "provisional_graph": 12,
+    "source_versions": 24
+  },
+  "external_source_reauthentication": "not_performed",
+  "graph_diff": {
+    "after_database_sha256": "7eb3bc33b9639e60aced375edfc4a45c4d3d7f3334e7aa4b4487272272d79f99",
+    "before_database_sha256": "c220167791352e524586bd1be6fd3a43eebb05aa9a2663c1d016b319f22173a2",
+    "canonical_edges_added": 0,
+    "canonical_edges_removed": 0,
+    "details": {
+      "edge_ids_added": [],
+      "node_ids_added": [],
+      "node_ids_changed": [
+        "ENT-IUPHAR-317",
+        "ENT-IUPHAR-318",
+        "ENT-IUPHAR-319",
+        "ENT-IUPHAR-320"
+      ]
+    },
+    "edges_added": 0,
+    "edges_changed": 0,
+    "edges_removed": 0,
+    "foundational_changes": 0,
+    "mass_change_halt": false,
+    "nodes_added": 0,
+    "nodes_changed": 4,
+    "nodes_removed": 0,
+    "status_changes": 0
+  },
+  "historical_inner_manifest_sha256": "261ce6e750117f308d462c10f7ee5bb364b0d3d2c1eef3dc83fb3b340f6b407a",
+  "remote_publication": false,
+  "result_database_sha256": "a152c197fe16af9f57c078327bfde4ee44caf869a9b708815f16e4b62b38a59c",
+  "scope": "Append-only transcription of archived Module 1A metadata; no external source re-authentication or claim promotion",
+  "verified_current_bytes_manifest_sha256": "b2122eaae29fe7c29ebf3982610e5ecffc4d3cb9325101aa0bc5e70121a8c59b"
+}

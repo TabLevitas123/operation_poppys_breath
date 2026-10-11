@@ -1,0 +1,8 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "ocsa_validation_passed": true,
+  "sql_recovery_verified": true,
+  "tests_failed": 0,
+  "tests_passed": 31,
+  "tests_run": 31
+}

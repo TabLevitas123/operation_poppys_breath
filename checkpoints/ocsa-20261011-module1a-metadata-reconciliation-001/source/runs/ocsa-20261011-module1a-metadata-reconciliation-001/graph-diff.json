@@ -1,0 +1,25 @@
+{
+  "after_database_sha256": "7eb3bc33b9639e60aced375edfc4a45c4d3d7f3334e7aa4b4487272272d79f99",
+  "before_database_sha256": "c220167791352e524586bd1be6fd3a43eebb05aa9a2663c1d016b319f22173a2",
+  "canonical_edges_added": 0,
+  "canonical_edges_removed": 0,
+  "details": {
+    "edge_ids_added": [],
+    "node_ids_added": [],
+    "node_ids_changed": [
+      "ENT-IUPHAR-317",
+      "ENT-IUPHAR-318",
+      "ENT-IUPHAR-319",
+      "ENT-IUPHAR-320"
+    ]
+  },
+  "edges_added": 0,
+  "edges_changed": 0,
+  "edges_removed": 0,
+  "foundational_changes": 0,
+  "mass_change_halt": false,
+  "nodes_added": 0,
+  "nodes_changed": 4,
+  "nodes_removed": 0,
+  "status_changes": 0
+}

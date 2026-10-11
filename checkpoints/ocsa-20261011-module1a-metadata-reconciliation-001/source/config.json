@@ -1,0 +1,17 @@
+{
+  "project": "Opioid Causal Systems Atlas",
+  "short_name": "OCSA",
+  "schema_version": "0.2.3",
+  "validator_version": "0.2.3",
+  "source_of_truth": "atlas.db",
+  "claim_default_state": "proposed",
+  "canonical_graph_state": "accepted",
+  "required_review_tier": 2,
+  "required_blind_verification_pass": 2,
+  "append_only_scientific_records": true,
+  "content_addressed_sources": true,
+  "tamper_evident_event_chains": true,
+  "local_first": true,
+  "canonical_claim_count": 0,
+  "provisional_claim_count": 12
+}
