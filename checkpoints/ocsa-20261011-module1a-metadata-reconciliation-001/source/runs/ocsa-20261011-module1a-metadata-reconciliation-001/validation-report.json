@@ -1,0 +1,9 @@
+{
+  "blocking_count": 0,
+  "database_sha256": "a152c197fe16af9f57c078327bfde4ee44caf869a9b708815f16e4b62b38a59c",
+  "finding_count": 0,
+  "findings": [],
+  "passed": true,
+  "validator_version": "0.2.3",
+  "warning_count": 0
+}

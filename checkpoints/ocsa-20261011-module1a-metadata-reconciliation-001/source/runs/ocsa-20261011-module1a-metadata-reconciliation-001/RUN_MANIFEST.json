@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "path": "changeset.json",
+      "sha256": "3bf53c2ef1a25fd58e44b4f9393ea6a0b8f562e984890c3f0df8b89acc00ef5c",
+      "size_bytes": 5728
+    },
+    {
+      "path": "run-report.md",
+      "sha256": "98c4d2e479405987c0b69470d6edaf3b696c771c06f6148f3c2928ad2e090d78",
+      "size_bytes": 1418
+    },
+    {
+      "path": "validation-report.json",
+      "sha256": "53ae48a45fe0b17d0d72542b9555826f75de4d3894f8ed01ca65ae7fde2494cc",
+      "size_bytes": 227
+    },
+    {
+      "path": "test-results.json",
+      "sha256": "897455d10adc3fdf164ca65707d0117839a6d160a36c5ff3eb6ac122b1f80d04",
+      "size_bytes": 188
+    },
+    {
+      "path": "graph-diff.json",
+      "sha256": "fbda434787acd59a3895e5ecfa73747b1a32bdfdad77b15c314cb2a0565a8c46",
+      "size_bytes": 664
+    },
+    {
+      "path": "FILE_MANIFEST_RECONCILED.json",
+      "sha256": "b2122eaae29fe7c29ebf3982610e5ecffc4d3cb9325101aa0bc5e70121a8c59b",
+      "size_bytes": 5569
+    }
+  ],
+  "run_id": "ocsa-20261011-module1a-metadata-reconciliation-001",
+  "status": "isolated_local_only_no_push"
+}
